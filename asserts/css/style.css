@@ -33,6 +33,7 @@ form[name="form-search"] {
    border-radius: 20px;
    background-color: var(--var--bg02);
    transition: background-color, 1s;
+   cursor: pointer;
 }
 #share:hover {
  background-color:  #007bd3;   
@@ -97,6 +98,7 @@ nav > .option-dashboard {
     gap: 0px 20px;
     padding: 15px 0px 15px 40px;
     margin: 7px 0px;
+    cursor: pointer;
 }
 nav > .option-dashboard:hover {
     background-color: #505050;
@@ -107,6 +109,24 @@ nav > .option-dashboard:hover {
 .option-dashboard  > p {
     color: #ffff;
     font-size: .95rem;
+    position: relative;
+    padding: 3px 0px;
+}
+.option-dashboard  > p::selection {
+    background-color: var(--var--bg02);
+}
+.option-dashboard  > p::before {
+    content: "";
+    width: 0%;
+    height: 1px;
+    background-color: var(--var--bg02);
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    transition: width, 1s;
+}
+.option-dashboard  > p:hover::before {
+    width: 100%;
 }
 nav > button {
     background-color: var(--var--bg02);
@@ -118,6 +138,7 @@ nav > button {
     border-radius: 5px;
     margin: 20px auto 0px auto;
     transition: background-color, .6s;
+    cursor: pointer;
 }
 nav > button:hover {
     background-color:  #007bd3;  
